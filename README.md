@@ -144,5 +144,4 @@ int main() {
 * Siralama oncesi dizi: 12 5 8 3 10 
 * Siralama sonrası dizi: 3 5 8 10 12
 
-[HEAP SORT Animasyonu]
-[def]: (https://www.youtube.com/shorts/i7xGwTRarl0)
+[HEAP SORT Animasyonu](https://www.youtube.com/shorts/i7xGwTRarl0)
