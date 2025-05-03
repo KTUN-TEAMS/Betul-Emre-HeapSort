@@ -144,8 +144,59 @@ int main() {
 * Siralama oncesi dizi: 12 5 8 3 10 
 * Siralama sonrası dizi: 3 5 8 10 12
 
+## TEST KODU 
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void heapify(vector<int>& arr, int n, int i) {
+    int largest = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
+
+    if (left < n && arr[left] > arr[largest])
+        largest = left;
+
+    if (right < n && arr[right] > arr[largest])
+        largest = right;
+
+    if (largest != i) {
+        swap(arr[i], arr[largest]);
+        heapify(arr, n, largest);
+    }
+}
+
+void heapSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int i = n / 2 - 1; i >= 0; i--)
+        heapify(arr, n, i);
+
+    for (int i = n - 1; i > 0; i--) {
+        swap(arr[0], arr[i]);
+        heapify(arr, i, 0);
+    }
+}
+
+int main() {
+    vector<int> arr = {5, 2, 8, 1, 9};
+
+    cout << "Siralama oncesi dizi: ";
+    for (int num : arr)
+        cout << num << " ";
+
+    heapSort(arr);
+
+    cout << "\nSiralama sonrasi dizi: ";
+    for (int num : arr)
+        cout << num << " ";
+
+    return 0;
+}
+```
+
 ## TEST İÇİN CANLI SERVER
-🔗 **Uygulama canlı hali ile test etmek için:**  
+🔗 **Uygulamayı canlı hali ile test etmek için test kodunu, siteye girdikten sonraki ilgili alana yapıştırınız:**  
 👉 [cpp-web-deneme.onrender.com](https://cpp-web-deneme.onrender.com)
     [Server Kurulum](https://github.com/emreoztemiz-ai-ml/cpp-web-deneme)
     
